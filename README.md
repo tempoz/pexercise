@@ -14,14 +14,14 @@ If the image cannot be loaded (for example, in the case of a 404),
 the url will be omitted from output and an error will be printed.
 If the image contains fewer than three colors, the most common
 color will be padded to the front of the list as necessary to
-generate three values. If the image is size 0, the output will
+generate three values. If the image is size zero, the output will
 be `url,#000000,#000BAD,#000000`. This output is distinct from
 valid output specifying the most common colors in that no valid
 output may contain the same value non-consecutively.
 
 ## Implementation Decisions
 
-The program runs 4 different kinds of threads in addition to the
+The program runs four different kinds of threads in addition to the
 main thread. The threads communicate with each other through
 `BlockingQueue`s.
 
@@ -57,7 +57,7 @@ Initially, a `HashMap` was considered for counting color occurences in
 images. This leads to a much more straightforward and, potentially,
 readable implementation. However, it was determined during benchmarking
 that the `HashMap` implementation is slower by approximately a factor of
-2, and additionally, due to the much greater memory requirements, it
+two, and additionally, due to the much greater memory requirements, it
 scales poorly.
 
 Caching of results per URL was also considered. The example input given
