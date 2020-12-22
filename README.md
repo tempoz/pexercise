@@ -36,6 +36,9 @@ thread that consumes that queue, writing the lines to the output file.
 These thread numbers were arrived at through experimentation visible
 in benchmarks.txt.
 
+The main thread poisons each queue when all the threads that feed that
+queue have been joined.
+
 The image processing is done by bucketing the colors in the image in a
 way very similar to a radix sort, bucketing by red byte, then green
 byte, then counting instances of the blue bytes.
