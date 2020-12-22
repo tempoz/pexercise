@@ -87,7 +87,7 @@ implementing linked lists for the primitives in question, the custom
 lists were selected.
 
 As discussed previously, using Java `InputStream`s to do file I/O was
-considered, but elected to use `FileChannel`s for small performance
+considered, but use of `FileChannel`s was elected for small performance
 improvements.
 
 ## Plans for Future Development
